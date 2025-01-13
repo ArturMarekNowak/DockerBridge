@@ -1,7 +1,7 @@
 version: '3.8'
 
 services:
-  nettoolsOne:
+  nginxOne:
     image: nginx:latest
     ports:
       - "8888:80"
@@ -9,7 +9,7 @@ services:
       - "./html:/usr/share/nginx/html"
     networks:
       - networkOne
-  nettoolsTwo:
+  nginxTwo:
     image: nginx:latest
     ports:
       - "8889:80"
