@@ -1,0 +1,26 @@
+version: '3.8'
+
+services:
+  nettoolsOne:
+    image: nginx:latest
+    ports:
+      - "8888:80"
+    volumes:
+      - "./html:/usr/share/nginx/html"
+    networks:
+      - networkOne
+  nettoolsTwo:
+    image: nginx:latest
+    ports:
+      - "8889:80"
+    volumes:
+      - "./html:/usr/share/nginx/html"
+    networks:
+      - networkTwo
+networks:
+  networkOne:
+    external:
+      name: networkOne
+  networkTwo:
+    external:
+      name: networkTwo
